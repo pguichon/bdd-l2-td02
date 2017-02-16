@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>TD2</section>
+				<section>
+					<h4>Énoncé</h4>
+
+
+						<div>
+							Nous devons construire un système de vente en ligne.
+							Un client posséde une fiche cliente qui contient ses informations personnelles (nom, prénom etc, adresses de livraison, adresse de facturation)
+							Un client peut choisir un ou plusieurs article, le mettre dans un panier, voir le total, et passer commande.
+							Nous devons pouvoir savoir combien il y a de commandes en cours ainsi que les stockes disponibles.
+							Nous voulons aussi avoir des statistiques sur les clients (sexe, répartition géographiques etc)
+
+						</div>
+
+				</section>
+				<section>
+					Créer la modélisation : une adresse doit avoir un pays dans une table et aussi une commune associé
+				</section>
+				<section>
+					<h4>Créer une table Client et la commande drop associée</h4>
+					<ul>
+						<li>nom</li>
+						<li>prenom</li>
+						<li>email</li>
+						<li>sexe</li>
+						<li>date_naissance</li>
+					</ul>
+
+					</section>
+				<section>
+					<h4>Créer une table Pays et la commande drop associé ainsi que la table Commune</h4>
+					<ul>
+						<li>label</li>
+						<li>-------</li>
+						<li>label</li>
+						<li>code_postal</li>
+					</ul>
+
+				</section>
+				<section>
+					<h4>Créer une table adresse</h4>
+					<ul>
+						<li>label</li>
+						<li>code_postal_etranger</li>
+					</ul>
+					ajouter les champs les champs aux différentes tables concernées pour créer les associations et les contraintes associées.
+				</section>
+				<section>
+					créer les requêtes pour insérer des données de test
+				</section>
+				<section>
+					créer une requêtes permettant de récupérer l'ensemble des clients et adresses associés (pays et commune compris)
+					Indication : vous devez faire une triple jointure (aide : faire par étape)
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
